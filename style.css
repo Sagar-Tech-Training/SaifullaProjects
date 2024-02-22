@@ -1,41 +1,232 @@
-* {
+body,
+    html {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+        background-color: #333;
+        color: white;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo img {
+        width: 40px;
+        /* Adjust size as needed */
+        height: 40px;
+        /* Adjust size as needed */
+        margin-right: 10px;
+    }
+
+    .nav-links {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-links li {
+        display: inline-block;
+        margin-right: 20px;
+    }
+
+    .nav-links li:last-child {
+        margin-right: 0;
+    }
+
+    .nav-links li a {
+        color: white;
+        text-decoration: none;
+    }
+
+    /* Style for the active link (optional) */
+    .nav-links li.active a {
+        font-weight: bold;
+    }
+    
+.banner {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.slides {
+    display: none;
+}
+
+img { vertical-align: middle; }
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
+
+@media only screen and (max-width: 600px) {
+    .prev, .next, .text { font-size: 11px; }
+}
+body, html {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    outline: none;
-    list-style: none;
-    border: none;
-    text-decoration: none;
-    font-family: "montserrat", sans-serif;
+    font-family: Arial, sans-serif;
+}
+
+.search-container {
+    padding: 20px;
+    text-align: center;
+}
+
+#search-input, #filter-select {
+    padding: 10px;
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+#results-container {
+    padding: 20px;
+    margin-top: 10px;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.food-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: space-around;
+}
+
+.food-item {
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    width: calc(33% - 20px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.food-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.food-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.food-price {
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    .food-item {
+        width: calc(50% - 20px);
     }
-    ::selection {
-        background-color: #c50529;
-    }
-    body {
+}
+#cartBtn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    z-index: 1000;
+}
+
+.cart-sidebar {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: white;
     overflow-x: hidden;
+    transition: 0.5s;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+    padding: 60px 10px 20px 10px;
+    z-index: 999;
+}
+
+#closeCartBtn {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 36px;
+    margin-left: 50px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .cart-sidebar {
+        padding: 60px 0 20px 0;
     }
-    header {
-        width: 100%;
-        min-height: 138vh;
-        background-image: linear-gradient(rgba(15, 23, 43, 0.9),rgba(15, 23, 43, 0.9)),url(bg-hero.jpg);
-        background-position: center;
-        background-size: cover;
-        background-attachment: fixed;
+}
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    margin: 10px 0;
+}
+
+.footer-section h4 {
+    margin-bottom: 15px;
+}
+
+.footer-section ul, .footer-section p {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
     }
-    nav {
-        display: flex;
-        width: 100%;
-        height: auto;
-        padding: 1% 5%;
-        background-color: black;
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-        top: 0;
-        position: fixed;
-    }
-    nav h1 {
-        color: #fea116;
-        cursor: pointer;
-        font-size: 30px;
-    }
+}
